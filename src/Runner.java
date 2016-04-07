@@ -1,3 +1,5 @@
+//import ua.gostart.goit.FilesSystem.EncodeCesar;
+
 import java.io.*;
 
 
@@ -24,7 +26,7 @@ public class Runner {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
             System.out.println("Message for encoding and writing to file: " + textMessageToFile);
             String encodeTextMessageToFile;
-            encodeTextMessageToFile = EncodeCesar.encode(2, ' ', '~', textMessageToFile);
+            encodeTextMessageToFile = EncodeCesar1.encode(2, ' ', '~', textMessageToFile);
             bw.write(encodeTextMessageToFile);
             bw.flush();
             bw.close();
@@ -38,7 +40,7 @@ public class Runner {
         try {
             FileInputStream fileInputStream = new FileInputStream("D://2.txt");
             String textMessageInFile = readFullyByByte(fileInputStream);
-            String decodeTextMessageToFile = DecodeCesar.decode(2, ' ', '~', textMessageInFile);
+            String decodeTextMessageToFile = DecodeCesar1.decode(2, ' ', '~', textMessageInFile);
             fileInputStream.close();
             // Обработка ошибки:
         } catch (FileNotFoundException e) {
